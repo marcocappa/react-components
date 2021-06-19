@@ -55,7 +55,6 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 	const handleResetSerchedOption = () => setSearchedOption('');
 
 	const handleResetSelectedOption = (e) => {
-		console.log(e.target);
 		e.stopPropagation();
 		setValueSelected('');
 		setIdSelected('');
@@ -83,7 +82,6 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 		const newOptions = [...options].filter((option) =>
 			option.value.toLowerCase().includes(searchedOption.toLowerCase())
 		);
-		console.log(newOptions);
 		setFilteredOptions(newOptions);
 	}, [options, searchedOption]);
 
