@@ -35,6 +35,7 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 		// set value selected and id:
 		setValueSelected(value);
 		setIdSelected(id);
+		setSearchedOption('');
 		// close dropdown list:
 		setShowOptions(false);
 		// call onSelect with {id and value}:
@@ -57,6 +58,16 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 	};
 
 	const handleResetSerchedOption = () => setSearchedOption('');
+
+	const handleResetSelectedOption = (e) => {
+		console.log(e.target);
+		e.stopPropagation();
+		setValueSelected('');
+		setIdSelected('');
+		setSearchedOption('');
+		onSelect({ id: null, value: '' });
+		setShowOptions(false);
+	};
 
 	useEffect(() => {
 		document.addEventListener('keyup', handleFocusOut);
@@ -91,7 +102,17 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 					onFocus={handleFocus}
 				>
 					{valueSelected === '' ? 'Select' : valueSelected}
+
 					<IconArrows className="dropdown__header-icon" />
+				</button>
+				<button
+					className={classnames(
+						'dropdown__header-clear-select',
+						valueSelected && 'active'
+					)}
+					onClick={handleResetSelectedOption}
+				>
+					<IconClose className="dropdown__header-clear-select-icon" />
 				</button>
 			</div>
 			<div className={classnames('dropdown__list', showOptions && 'active')}>
@@ -106,7 +127,6 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 							value={searchedOption}
 							onChange={handleFilterOptions}
 						/>
-
 						<button
 							className={classnames(
 								'dropdown__list-clear-search',

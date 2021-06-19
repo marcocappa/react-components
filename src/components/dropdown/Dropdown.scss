@@ -4,76 +4,101 @@
 
     &__header {
         &-label {
-            margin: 4px 4px 10px;
             color: #999999;
-            text-transform: uppercase;
             display: inline-block;
             font-weight: 500;
+            margin: 4px 4px 10px;
+            text-transform: uppercase;
         }
         &-selected-option {
-            cursor: pointer;
-            border-radius: 4px;
-            color: black;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 10px 12px;
             background-color: white;
+            border-radius: 4px;
             border: 2px solid rgb(207, 220, 238);
-            margin-bottom: 4px;
-            text-align: left;
-            font-weight: 300;
-            position: relative;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            box-sizing: border-box;
+            color: black;
+            cursor: pointer;
+            font-weight: 300;
+            margin-bottom: 4px;
+            padding: 10px 12px;
+            position: relative;
+            text-align: left;
+            width: 100%;
         }
         &-icon {
             position: absolute;
             right: 10px;
+        }
+
+        &-clear-select {
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            bottom: 12px;
+            cursor: pointer;
+            display: none;
+            height: 22px;
+            justify-content: center;
+            opacity: 0.7;
+            position: absolute;
+            right: 20px;
+            width: 22px;
+
+            &.active {
+                display: flex;
+            }
+        }
+
+        &-clear-select-icon {
+            height: 16px;
+            width: 16px;
         }
     }
 
     &__list {
         background-color: white;
         border: 1px solid rgb(207, 220, 238);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        box-sizing: border-box;
+        display: none;
         max-height: 390px;
         overflow-y: scroll;
-        display: none;
-        box-sizing: border-box;
         position: absolute;
-        z-index: 1;
         width: 100%;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        z-index: 1;
 
         &-wrap-search {
-            width: 100%;
             box-sizing: border-box;
             padding: 0.75rem;
             position: relative;
+            width: 100%;
         }
 
         &-search {
-            cursor: pointer;
             border-radius: 4px;
-            color: black;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 10px 12px;
             border: 2px solid rgb(207, 220, 238);
-            margin-bottom: 4px;
+            box-sizing: border-box;
+            color: black;
+            cursor: pointer;
             font-weight: 300;
+            margin-bottom: 4px;
+            padding: 10px 12px;
+            width: 100%;
         }
 
         &-clear-search {
-            width: 20px;
-            height: 20px;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            height: 22px;
+            justify-content: center;
+            opacity: 0.7;
             position: absolute;
             right: 20px;
-            top: 22px;
-            border: none;
-            display: none;
-            background-color: transparent;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
+            top: 20px;
+            width: 22px;
 
             &.active {
                 display: flex;
@@ -81,19 +106,19 @@
         }
 
         &-clear-search-icon {
-            width: 10px;
-            height: 10px;
+            height: 16px;
+            width: 16px;
         }
 
         &-item {
-            cursor: pointer;
-            width: 100%;
-            border: none;
-            border-top: 1px solid rgb(207, 220, 238);
             background-color: transparent;
+            border-top: 1px solid rgb(207, 220, 238);
+            border: none;
+            cursor: pointer;
+            font-weight: 300;
             padding: 10px 12px;
             text-align: left;
-            font-weight: 300;
+            width: 100%;
 
             &:hover {
                 background-color: #f4f4f4;
@@ -105,9 +130,9 @@
         }
 
         &-no-options {
+            font-weight: 300;
             margin: 0;
             padding: 0 12px 12px;
-            font-weight: 300;
         }
 
         &.active {
