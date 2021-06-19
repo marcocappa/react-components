@@ -44,6 +44,9 @@ function App() {
 				/>
 			</Container>
 			<Container>
+				<p>
+					This is an example of reusing the same component with different data:
+				</p>
 				<Dropdown
 					id="countries"
 					options={countries}
