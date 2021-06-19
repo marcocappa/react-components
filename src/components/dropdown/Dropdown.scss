@@ -1,0 +1,117 @@
+.dropdown {
+    background-color: transparent;
+    position: relative;
+
+    &__header {
+        &-label {
+            margin: 4px 4px 10px;
+            color: #999999;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 500;
+        }
+        &-selected-option {
+            cursor: pointer;
+            border-radius: 4px;
+            color: black;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            background-color: white;
+            border: 2px solid rgb(207, 220, 238);
+            margin-bottom: 4px;
+            text-align: left;
+            font-weight: 300;
+            position: relative;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        &-icon {
+            position: absolute;
+            right: 10px;
+        }
+    }
+
+    &__list {
+        background-color: white;
+        border: 1px solid rgb(207, 220, 238);
+        max-height: 390px;
+        overflow-y: scroll;
+        display: none;
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+        &-wrap-search {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.75rem;
+            position: relative;
+        }
+
+        &-search {
+            cursor: pointer;
+            border-radius: 4px;
+            color: black;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border: 2px solid rgb(207, 220, 238);
+            margin-bottom: 4px;
+            font-weight: 300;
+        }
+
+        &-clear-search {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 20px;
+            top: 22px;
+            border: none;
+            display: none;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &.active {
+                display: flex;
+            }
+        }
+
+        &-clear-search-icon {
+            width: 10px;
+            height: 10px;
+        }
+
+        &-item {
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            border-top: 1px solid rgb(207, 220, 238);
+            background-color: transparent;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 300;
+
+            &:hover {
+                background-color: #f4f4f4;
+            }
+
+            &.selected {
+                background-color: #f4f4f4;
+            }
+        }
+
+        &-no-options {
+            margin: 0;
+            padding: 0 12px 12px;
+            font-weight: 300;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+}
