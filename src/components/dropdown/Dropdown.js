@@ -14,7 +14,6 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 	const [searchedOption, setSearchedOption] = useState('');
 
 	const handleShowOptions = ({ target }) => {
-		// if click or focus on the button showOptions
 		if (dropdownRef.current && dropdownRef.current.contains(target)) {
 			if (target === dropdownButtonRef.current) {
 				setShowOptions((s) => !s);
@@ -23,7 +22,6 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 			}
 			return;
 		}
-		// if click or focus outside the "ref" hideOptions
 		setShowOptions(false);
 	};
 
@@ -32,13 +30,10 @@ const Dropdown = ({ id: selectId = '', options, label, onSelect }) => {
 	};
 
 	const handleSelection = (value, id) => {
-		// set value selected and id:
 		setValueSelected(value);
 		setIdSelected(id);
 		setSearchedOption('');
-		// close dropdown list:
 		setShowOptions(false);
-		// call onSelect with {id and value}:
 		onSelect({ id, value });
 	};
 
